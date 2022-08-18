@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="23dp"
+        android:paddingBottom="16dp"
+        android:weightSum="4"
+        android:background="@color/home_background">
+
+        <ImageView
+            android:id="@+id/filter"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_baseline_filter_list_24"
+            android:layout_weight="1"
+            />
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            app:iconifiedByDefault="false"
+            app:queryHint="Search"
+            android:layout_weight="2"
+            android:elevation="10dp"/>
+
+        <ImageView
+            android:id="@+id/changeOrientation"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_grid"
+            android:layout_weight="1"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/filterLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:padding="16dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category : "
+                android:textSize="20sp"
+                android:textColor="@android:color/black"/>
+
+           <Button
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Mobile"
+               android:textSize="12sp"
+               android:id="@+id/mobile"
+               android:textColor="#605F5F"
+               android:background="?attr/selectableItemBackground"
+               android:onClick="mobile"
+               />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="tv"
+                android:id="@+id/tv"
+                android:textSize="12sp"
+                android:textColor="#605F5F"
+                android:background="?attr/selectableItemBackground"
+                android:onClick="tv"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Size : "
+                android:textSize="20sp"
+                android:textColor="@android:color/black"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="M"
+                android:textSize="12sp"
+                android:id="@+id/medium"
+                android:textColor="#605F5F"
+                android:background="?attr/selectableItemBackground"
+                android:onClick="M"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="S"
+                android:textSize="12sp"
+                android:id="@+id/small"
+                android:textColor="#605F5F"
+                android:background="?attr/selectableItemBackground"
+                android:onClick="S"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="XL"
+                android:textSize="12sp"
+                android:id="@+id/extraLarge"
+                android:textColor="#605F5F"
+                android:background="?attr/selectableItemBackground"
+                android:onClick="XL"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="5.2">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Brand : "
+                android:textSize="20sp"
+                android:textColor="@android:color/black"
+                android:layout_weight="1.1"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Mi"
+                android:id="@+id/redmi"
+                android:textSize="12sp"
+                android:textColor="#605F5F"
+                android:textAllCaps="false"
+                android:background="?attr/selectableItemBackground"
+                android:layout_weight="1"
+                android:onClick="Mi"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Lava"
+                android:id="@+id/lava"
+                android:textSize="12sp"
+                android:textColor="#605F5F"
+                android:textAllCaps="false"
+                android:background="?attr/selectableItemBackground"
+                android:layout_weight="1"
+                android:onClick="Lava"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Sony"
+                android:textSize="12sp"
+                android:id="@+id/Sony"
+                android:textColor="#605F5F"
+                android:textAllCaps="false"
+                android:background="?attr/selectableItemBackground"
+                android:layout_weight="1"
+                android:onClick="Sony"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Nokia"
+                android:id="@+id/nokia"
+                android:textSize="12sp"
+                android:textColor="#605F5F"
+                android:textAllCaps="false"
+                android:background="?attr/selectableItemBackground"
+                android:layout_weight="1.1"
+                android:onClick="Nokia"/>
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show All"
+            android:textSize="12sp"
+            android:id="@+id/all"
+            android:textColor="#605F5F"
+            android:background="?attr/selectableItemBackground"
+            android:onClick="showALl"
+            />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/product_item_layout"
+        />
+
+</LinearLayout>
