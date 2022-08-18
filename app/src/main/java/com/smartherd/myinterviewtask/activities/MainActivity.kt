@@ -137,111 +137,77 @@ class MainActivity : AppCompatActivity(), ProductItemClicked {
 
     //Category Button
     fun mobile(view: View) {
-        val filterProduct = ArrayList<Product>()
-        for (product : Product in SampleData.PRODUCTS){
-            if (product.category?.toLowerCase()?.contains("Mobile".toLowerCase()) == true){
-                    filterProduct.add(product)
-                }
-        }
-        val adapter = ProductAdapter(filterProduct,this@MainActivity)
-        recyclerView.adapter = adapter
-        filterLayout.visibility = View.GONE
+       filterCategory("Mobile")
     }
     fun tv(view: View) {
-        val filterProduct = ArrayList<Product>()
-        for (product : Product in SampleData.PRODUCTS){
-            if (product.category?.toLowerCase()?.contains("Tv".toLowerCase()) == true){
-                filterProduct.add(product)
-            }
-        }
-        val adapter = ProductAdapter(filterProduct,this@MainActivity)
-        recyclerView.adapter = adapter
-        filterLayout.visibility = View.GONE
+       filterCategory("Tv")
     }
 
     //SizeButton
     fun M(view: View) {
-        val filterProduct = ArrayList<Product>()
-        for (product : Product in SampleData.PRODUCTS){
-            if (product.sizes?.toLowerCase()?.contains("M".toLowerCase()) == true){
-                filterProduct.add(product)
-            }
-        }
-        val adapter = ProductAdapter(filterProduct,this@MainActivity)
-        recyclerView.adapter = adapter
-        filterLayout.visibility = View.GONE
+        filterSize("M")
     }
     fun S(view: View) {
-        val filterProduct = ArrayList<Product>()
-        for (product : Product in SampleData.PRODUCTS){
-            if (product.sizes?.toLowerCase()?.contains("S".toLowerCase()) == true){
-                filterProduct.add(product)
-            }
-        }
-        val adapter = ProductAdapter(filterProduct,this@MainActivity)
-        recyclerView.adapter = adapter
-        filterLayout.visibility = View.GONE
+        filterSize("S")
     }
     fun XL(view: View) {
-        val filterProduct = ArrayList<Product>()
-        for (product : Product in SampleData.PRODUCTS){
-            if (product.sizes?.toLowerCase()?.contains("XL".toLowerCase()) == true){
-                filterProduct.add(product)
-            }
-        }
-        val adapter = ProductAdapter(filterProduct,this@MainActivity)
-        recyclerView.adapter = adapter
-        filterLayout.visibility = View.GONE
+       filterSize("XL")
     }
 
     //Brand Button
     fun Mi(view: View) {
-        val filterProduct = ArrayList<Product>()
-        for (product : Product in SampleData.PRODUCTS){
-            if (product.brand?.toLowerCase()?.contains("Redmi".toLowerCase()) == true){
-                filterProduct.add(product)
-            }
-        }
-        val adapter = ProductAdapter(filterProduct,this@MainActivity)
-        recyclerView.adapter = adapter
-        filterLayout.visibility = View.GONE
+       filterBrand("Redmi")
     }
     fun Lava(view: View) {
-        val filterProduct = ArrayList<Product>()
-        for (product : Product in SampleData.PRODUCTS){
-            if (product.brand?.toLowerCase()?.contains("Lava".toLowerCase()) == true){
-                filterProduct.add(product)
-            }
-        }
-        val adapter = ProductAdapter(filterProduct,this@MainActivity)
-        recyclerView.adapter = adapter
-        filterLayout.visibility = View.GONE
+        filterBrand("Lava")
     }
     fun Nokia(view: View) {
-        val filterProduct = ArrayList<Product>()
-        for (product : Product in SampleData.PRODUCTS){
-            if (product.brand?.toLowerCase()?.contains("Nokia".toLowerCase()) == true){
-                filterProduct.add(product)
-            }
-        }
-        val adapter = ProductAdapter(filterProduct,this@MainActivity)
-        recyclerView.adapter = adapter
-        filterLayout.visibility = View.GONE
+       filterBrand("Nokia")
     }
     fun Sony(view: View) {
-        val filterProduct = ArrayList<Product>()
-        for (product : Product in SampleData.PRODUCTS){
-            if (product.brand?.toLowerCase()?.contains("Sony".toLowerCase()) == true){
-                filterProduct.add(product)
-            }
-        }
-        val adapter = ProductAdapter(filterProduct,this@MainActivity)
+       filterBrand("Sony")
+    }
+
+    //show all button
+    fun showALl(view: View) {
+        val adapter = ProductAdapter(SampleData.PRODUCTS,this@MainActivity)
         recyclerView.adapter = adapter
         filterLayout.visibility = View.GONE
     }
 
-    fun showALl(view: View) {
-        val adapter = ProductAdapter(SampleData.PRODUCTS,this@MainActivity)
+    //category filter
+    fun filterCategory(category1 : String){
+        val filterProduct = ArrayList<Product>()
+        for (product : Product in SampleData.PRODUCTS){
+            if (product.category?.toLowerCase()?.contains(category1.toLowerCase()) == true){
+                filterProduct.add(product)
+            }
+        }
+        val adapter = ProductAdapter(filterProduct,this@MainActivity)
+        recyclerView.adapter = adapter
+        filterLayout.visibility = View.GONE
+    }
+    //Size filter
+    fun filterSize(size1 : String){
+        val filterProduct = ArrayList<Product>()
+        for (product : Product in SampleData.PRODUCTS){
+            if (product.sizes?.toLowerCase()?.contains(size1.toLowerCase()) == true){
+                filterProduct.add(product)
+            }
+        }
+        val adapter = ProductAdapter(filterProduct,this@MainActivity)
+        recyclerView.adapter = adapter
+        filterLayout.visibility = View.GONE
+    }
+    //Brand filter
+    fun filterBrand(brand1 : String){
+        val filterProduct = ArrayList<Product>()
+        for (product : Product in SampleData.PRODUCTS){
+            if (product.brand?.toLowerCase()?.contains(brand1.toLowerCase()) == true){
+                filterProduct.add(product)
+            }
+        }
+        val adapter = ProductAdapter(filterProduct,this@MainActivity)
         recyclerView.adapter = adapter
         filterLayout.visibility = View.GONE
     }
